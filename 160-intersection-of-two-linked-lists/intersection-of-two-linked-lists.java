@@ -27,14 +27,13 @@ public class Solution {
         ListNode tempB = headB;
 
 
-        if(len1 > len2){
-            for(int i=0; i<len1-len2; i++){
-                tempA = tempA.next;
-            }
-        }else{
-            for(int i=0; i<len2-len1; i++){
-                tempB = tempB.next;
-            }
+        while(len1 > len2){
+            tempA = tempA.next;
+            len1--;
+        }
+        while(len2 > len1){
+            tempB = tempB.next;
+            len2--;
         }
 
         while(tempA != tempB){
